@@ -12,9 +12,7 @@ public class Report {
     }
 
     public long duration() {
-        return TimeUnit.DAYS.convert(
-                map.start().getTime() - map.end().getTime(),
-                TimeUnit.MILLISECONDS);
+        return TimeUnit.DAYS.convert(map.start().getTime() - map.end().getTime(), TimeUnit.MILLISECONDS);
     }
 
     public double weightLoss() {

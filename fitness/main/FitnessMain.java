@@ -21,17 +21,14 @@ public class FitnessMain {
         File file = new File(FILE_PATH);
 
         if (!file.exists()) {
-            ProgramUtility
-                    .error("File not found: " + file.getAbsolutePath() + ".");
+            ProgramUtility.error("File not found: " + file.getAbsolutePath() + ".");
         }
 
-        Report report = new Report(
-                new CalorieMap(createMap(FileUtility.readLines(file))));
+        Report report = new Report(new CalorieMap(createMap(FileUtility.readLines(file))));
         System.out.println(report);
     }
 
-    private static Map<Date, Tuple<Double, Integer>> createMap(
-            List<String> lines) {
+    private static Map<Date, Tuple<Double, Integer>> createMap(List<String> lines) {
         Map<Date, Tuple<Double, Integer>> map = new LinkedHashMap<Date, Tuple<Double, Integer>>();
         int currentLine = 0;
 
@@ -48,26 +45,22 @@ public class FitnessMain {
 
             if (!calories.matches("-?\\d+")) {
                 ProgramUtility.error("Line " + currentLine
-                        + " is erroneously formatted. The calorie column contained a non-integer: "
-                        + calories + ".");
+                        + " is erroneously formatted. The calorie column contained a non-integer: " + calories + ".");
             }
 
             if (!weight.matches("^(-?)(0|([1-9][0-9]*))(\\.[0-9]+)?$")) {
                 ProgramUtility.error("Line " + currentLine
-                        + " is erroneously formatted. The weight column contained a non-float: "
-                        + weight + ".");
+                        + " is erroneously formatted. The weight column contained a non-float: " + weight + ".");
             }
 
             Date date = toDate(dateString);
 
             if (date == null) {
                 ProgramUtility.error("Line " + currentLine
-                        + " is erroneously formatted. The date column contained a non-date: "
-                        + date + ".");
+                        + " is erroneously formatted. The date column contained a non-date: " + date + ".");
             }
 
-            map.put(date, new Tuple<Double, Integer>(Double.parseDouble(weight),
-                    Integer.parseInt(calories)));
+            map.put(date, new Tuple<Double, Integer>(Double.parseDouble(weight), Integer.parseInt(calories)));
             ++currentLine;
         }
 

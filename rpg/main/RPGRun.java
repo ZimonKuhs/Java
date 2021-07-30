@@ -13,8 +13,7 @@ public class RPGRun {
     }
 
     public static void main(String[] args) {
-        String[] priority = { "Dexterity", "Strength", "Wisdom", "Stamina",
-                "Charisma", "Intelligence" };
+        String[] priority = { "Dexterity", "Strength", "Wisdom", "Stamina", "Charisma", "Intelligence" };
 
         Attributes attributes = new Attributes();
         attributes.reorder(priority);

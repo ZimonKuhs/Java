@@ -11,8 +11,9 @@ import program.ProgramUtility;
 
 public final class JSONInterface {
 
-    /* Non-instantiable. */
-    private JSONInterface() {}
+    private JSONInterface() {
+        /* Non-instantiable. */
+    }
 
     public static JSONObject parse(String fileName) {
         Object obj = null;

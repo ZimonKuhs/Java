@@ -25,20 +25,16 @@ public class CalorieMap {
      * Constructors.
      */
 
-    public CalorieMap(Collection<Date> dates, Collection<Double> weights,
-            Collection<Integer> calories) {
+    public CalorieMap(Collection<Date> dates, Collection<Double> weights, Collection<Integer> calories) {
         this(makeMap(dates, weights, calories));
     }
 
-    private static Map<Date, Tuple<Double, Integer>> makeMap(
-            Collection<Date> dates, Collection<Double> weights,
+    private static Map<Date, Tuple<Double, Integer>> makeMap(Collection<Date> dates, Collection<Double> weights,
             Collection<Integer> calories) {
         int size = dates.size();
         if (weights.size() < size || calories.size() < size) {
-            throw new IllegalArgumentException(
-                    "More dates than entries. There are " + size + " dates, "
-                            + weights.size() + " weights, and "
-                            + calories.size() + " calories.");
+            throw new IllegalArgumentException("More dates than entries. There are " + size + " dates, "
+                    + weights.size() + " weights, and " + calories.size() + " calories.");
         }
 
         Map<Date, Tuple<Double, Integer>> map = new LinkedHashMap<Date, Tuple<Double, Integer>>();
@@ -47,8 +43,7 @@ public class CalorieMap {
         List<Integer> calorieList = new ArrayList<Integer>(calories);
 
         for (int i = 0; i < size; ++i) {
-            map.put(dateList.remove(0), new Tuple<Double, Integer>(
-                    weightList.remove(0), calorieList.remove(0)));
+            map.put(dateList.remove(0), new Tuple<Double, Integer>(weightList.remove(0), calorieList.remove(0)));
         }
 
         return map;
@@ -127,8 +122,7 @@ public class CalorieMap {
 
         for (Entry<Date, Tuple<Double, Integer>> entry : map.entrySet()) {
             Tuple<?, ?> value = entry.getValue();
-            string.append(toDate(entry.getKey()) + "\t" + value.first() + "\t"
-                    + value.second() + "\n");
+            string.append(toDate(entry.getKey()) + "\t" + value.first() + "\t" + value.second() + "\n");
         }
         string.append(dashes);
 

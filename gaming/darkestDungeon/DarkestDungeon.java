@@ -11,18 +11,15 @@ import java.util.Set;
 public class DarkestDungeon {
     private static final Random DIE = new Random();
 
-    private static final String[] HEROES = { "Abomination", "Antiquarian",
-            "Arbalest", "Bounty Hunter", "Crusader", "Flagellant",
-            "Grave Robber", "Hellion", "Highwayman", "Houndmaster", "Jester",
-            "Leper", "Man-at-Arms", "Musketeer", "Occultist", "Plague Doctor",
-            "Shieldbreaker", "Vestal" };
+    private static final String[] HEROES = { "Abomination", "Antiquarian", "Arbalest", "Bounty Hunter", "Crusader",
+            "Flagellant", "Grave Robber", "Hellion", "Highwayman", "Houndmaster", "Jester", "Leper", "Man-at-Arms",
+            "Musketeer", "Occultist", "Plague Doctor", "Shieldbreaker", "Vestal" };
     private static final int N_HEROES = HEROES.length;
 
     public List<String> pickClasses(int amount) {
         if (amount <= 0 || amount > N_HEROES) {
             throw new IllegalArgumentException(
-                    "Number of heroes selected must be between 0 and "
-                            + HEROES.length + ".");
+                    "Number of heroes selected must be between 0 and " + HEROES.length + ".");
         }
 
         if (amount == N_HEROES) {

@@ -10,10 +10,14 @@ import org.junit.jupiter.api.DisplayName;
 public class TestPokemon {
 
     @BeforeEach
-    public void setUp() {}
+    public void setUp() {
+        /* NOP. */
+    }
 
     @AfterEach
-    public void tearDown() {}
+    public void tearDown() {
+        /* NOP. */
+    }
 
     @Test
     @DisplayName("List creation should result in 2 entries.")

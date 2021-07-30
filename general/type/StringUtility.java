@@ -5,7 +5,8 @@ public class StringUtility {
     /*
      * Utility classes should never be instantiated.
      */
-    private StringUtility() {}
+    private StringUtility() {
+    }
 
     public static String repeat(char character, int repetitions) {
         return repeat("" + character, repetitions);
@@ -39,8 +40,7 @@ public class StringUtility {
     }
 
     public static boolean isInteger(String string) {
-        return isPositiveInteger(string
-                .substring(string.charAt(0) == '-' ? 1 : 0, string.length()));
+        return isPositiveInteger(string.substring(string.charAt(0) == '-' ? 1 : 0, string.length()));
 
     }
 

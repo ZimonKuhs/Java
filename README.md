@@ -1,2 +1,3 @@
 # Java
-Unlike Challenges, this is more about some serious attempts.
+
+Anything and everything will, in time, be Java code.

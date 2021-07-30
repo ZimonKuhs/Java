@@ -4,5 +4,8 @@
             "path": "."
         }
     ],
-    "settings": {}
+    "settings": {
+        "java.format.settings.url": "eclipse-formatter.xml",
+        "java.configuration.updateBuildConfiguration": "automatic"
+    }
 }

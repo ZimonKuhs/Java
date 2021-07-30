@@ -21,8 +21,7 @@ public class FileUtility {
         try {
             content = Files.readAllLines(filePath);
         } catch (IOException e) {
-            ProgramUtility.error("Could not read file " + filePath.toString()
-                    + ": " + e.getMessage());
+            ProgramUtility.error("Could not read file " + filePath.toString() + ": " + e.getMessage());
         }
 
         return content;

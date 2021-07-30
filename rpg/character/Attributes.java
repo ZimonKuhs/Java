@@ -71,10 +71,8 @@ public class Attributes {
 
     public void reorder(List<String> priority) {
         if (priority.size() > attributes.size()) {
-            throw new IllegalArgumentException(
-                    "Invalid priority order: More stats to prioritize ("
-                            + priority.size() + ") than available stats ("
-                            + attributes.size() + ").");
+            throw new IllegalArgumentException("Invalid priority order: More stats to prioritize (" + priority.size()
+                    + ") than available stats (" + attributes.size() + ").");
         }
 
         validatePriority(priority);
@@ -112,8 +110,7 @@ public class Attributes {
         }
 
         throw new IllegalArgumentException(
-                "Invalid attribute names found in priority: "
-                        + Arrays.toString(missing.toArray()) + ".");
+                "Invalid attribute names found in priority: " + Arrays.toString(missing.toArray()) + ".");
     }
 
     @Override
@@ -122,8 +119,7 @@ public class Attributes {
 
         for (String name : attributes.keySet()) {
             string.append("    ");
-            string.append(
-                    StringUtility.normalize(name, " ", LONGEST_NAME.length()));
+            string.append(StringUtility.normalize(name, " ", LONGEST_NAME.length()));
             string.append("    " + get(name) + "\n");
         }
 

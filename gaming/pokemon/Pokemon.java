@@ -27,9 +27,8 @@ public class Pokemon {
     private void checkMoves(List<Move> moves) {
         int nMoves = moves.size();
         if (nMoves <= 0 || nMoves > MAX_MOVES) {
-            throw new IllegalStateException("Illegal Pokémon " + name
-                    + " found: number of moves has to be [1, 4], was " + nMoves
-                    + ".");
+            throw new IllegalStateException(
+                    "Illegal PokÃ©mon " + name + " found: number of moves has to be [1, 4], was " + nMoves + ".");
         }
     }
 

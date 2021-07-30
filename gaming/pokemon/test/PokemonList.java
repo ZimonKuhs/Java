@@ -13,17 +13,16 @@ public class PokemonList {
     private static final Map<String, Pokemon> pokemon = new HashMap<String, Pokemon>();
     private static boolean created = false;
 
-    /* Non-instantiable. */
-    private PokemonList() {}
+    private PokemonList() {
+        /* Non-instantiable. */
+    }
 
     static {
         if (created) {
-            throw new UnsupportedOperationException(
-                    "Pokémon list has already been created!");
+            throw new UnsupportedOperationException("Pokï¿½mon list has already been created!");
         }
-        JSONArray array = (JSONArray) JSONInterface.parse(
-                "D:\\Code\\Eclipse\\UnnecessaryUtilities\\gaming\\data\\pokemon.json")
-                .get("Pokemon");
+        JSONArray array = (JSONArray) JSONInterface
+                .parse("D:\\Code\\Eclipse\\UnnecessaryUtilities\\gaming\\data\\pokemon.json").get("Pokemon");
 
         for (Object obj : array) {
             Pokemon mon = new Pokemon((JSONObject) obj);
@@ -44,8 +43,7 @@ public class PokemonList {
 
     public static Pokemon get(String name) {
         if (!exists(name)) {
-            throw new UnsupportedOperationException(
-                    "No such Pokemon has been parsed: " + name + ".");
+            throw new UnsupportedOperationException("No such Pokemon has been parsed: " + name + ".");
         }
         return pokemon.get(name);
     }

@@ -25,9 +25,7 @@ public class MathUtility {
         }
 
         if (!errors.isEmpty()) {
-            throw new IllegalArgumentException(
-                    "Can not calculate averages using non-Number elements: "
-                            + errors + ".");
+            throw new IllegalArgumentException("Can not calculate averages using non-Number elements: " + errors + ".");
         }
 
         return average(doubles);

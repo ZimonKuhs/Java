@@ -18,7 +18,6 @@ public class Run {
 
     @SuppressWarnings("unused")
     private static void pickClasses() {
-        System.out.println(Arrays
-                .toString((new DarkestDungeon().pickClasses(4).toArray())));
+        System.out.println(Arrays.toString((new DarkestDungeon().pickClasses(4).toArray())));
     }
 }
